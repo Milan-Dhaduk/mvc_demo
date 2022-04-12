@@ -8,7 +8,7 @@
         }
         public function index1() {
             
-            echo "CustomerController Method";
+            echo "Customer Controller Method";
         }
 
         public function getAll($id)

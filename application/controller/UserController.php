@@ -7,7 +7,7 @@
             
         }
         public function index() {
-            echo "index Method";
+            echo "index Method <br>";
         }
 
         public function getAll($id)

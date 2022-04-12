@@ -14,7 +14,7 @@
 print_r($employee);
 ?>
     <h2>User View</h2>
-    <!-- <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus doloremque aliquam in vero aspernatur voluptatum quas aut, consequatur ad soluta nisi accusamus molestias inventore fuga repellendus sapiente reiciendis non ea.</p> -->
+    <p>user view is call from view folder</p>
 
 </body>
 </html>

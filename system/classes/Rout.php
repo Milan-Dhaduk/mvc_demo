@@ -1,43 +1,43 @@
 <?php
 // for controller only
     class Rout {
-        public $controller = "Welcome";
-        public $method = "index";
-        public $parameter = [];
+        public $controller = "Welcome";  //welcome page
+        public $method = "index";  // welcome page index method set 
+        public $parameter = []; // user can pass maultiple parameter request url
         
         public function __construct() {
             echo "<pre>";
             $url = $this->url();
 
-            if(!empty($url)) {
-                if(file_exists("../application/controller/" .$url[0]. ".php")) {
-                    $this->controller = $url[0];
-                    unset($url[0]);
+            if(!empty($url)) {  //url empty not
+                if(file_exists("../application/controller/" .$url[0]. ".php")) { //controller present
+                    $this->controller = $url[0];   // deafult controller replace
+                    unset($url[0]);                 // remove controller
                 } else {
                     echo "Sorry Controller " .$url[0]. ".php not Found";
                 }
             }
             print_r($this->controller);
 
-            // include controller folder
+            // include controller 
             include_once "../application/controller/" .$this->controller. ".php";
 
             // create object of controller folder
-            $this->controller = new $this->controller;
+            $this->controller = new $this->controller; //instance of controller variable
 
-            if(isset($url[1]) && !empty($url[1])) {
-                if(method_exists($this->controller, $url[1])) {
-                    $this->method = $url[1];
+            if(isset($url[1]) && !empty($url[1])) {  // url value 1 or not empty
+                if(method_exists($this->controller, $url[1])) { //method exit for controller url1
+                    $this->method = $url[1];               //set 1 index url
                     unset($url[1]);
                 } else {
                     echo "Sorry Method " .$url[1]. " not found";
                 }
             }
 
-            if(isset($url)) {
-                $this->parameter = $url;
+            if(isset($url)) {    //url parameter set
+                $this->parameter = $url;  //set parameter
             } else {
-                $this->parameter = [];
+                $this->parameter = [];  // not set to empty array
             }
             
             print_r($url);
