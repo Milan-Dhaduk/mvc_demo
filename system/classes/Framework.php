@@ -14,7 +14,8 @@
         }
 
         // for access file inside of model folder
-        public function model($modelName) {
+        public function model($modelName) 
+        {
             if(file_exists("../application/model/" .$modelName. ".php")) {  
                 include_once "../application/model/$modelName.php";
                 return new $modelName;    // instance of usermodel file
@@ -22,7 +23,20 @@
                 echo "Sorry $modelName.php file not found";
             }
         }
-
+        
+        public function input($inputname)
+        {
+            if($_SERVER['REQUEST_METHOD']=="POST" || $_SERVER['REQUEST_METHOD'] == 'post' )
+            {
+                return trim($_POST[$inputname]);
+            }
+            else if($_SERVER['REQUEST_METHOD'] == 'GET' || $_SERVER['REQUEST_METHOD'] == 'get')
+            {
+                return trim($_GET[$inputname]);
+            }
+            
+        
+        }
     }
 
 
