@@ -6,7 +6,7 @@
         public $parameter = []; // user can pass maultiple parameter request url
         
         public function __construct() {
-            echo "<pre>";
+           // echo "<pre>";
             $url = $this->url();
 
             if(!empty($url)) {  //url empty not
@@ -17,7 +17,7 @@
                     echo "Sorry Controller " .$url[0]. ".php not Found";
                 }
             }
-            print_r($this->controller);
+           // print_r($this->controller);
 
             // include controller 
             include_once "../application/controller/" .$this->controller. ".php";
@@ -40,9 +40,9 @@
                 $this->parameter = [];  // not set to empty array
             }
             
-            print_r($url);
-            print_r($this->method);
-            print_r($this->parameter);
+            
+            //print_r($this->method);
+           
             call_user_func_array([$this->controller, $this->method],$this->parameter);
         }
 
@@ -52,7 +52,7 @@
                 $url = rtrim($url);
                 $url = filter_var($url, FILTER_SANITIZE_URL);
                 $url = explode("/", $url);
-                print_r($url);
+                //print_r($url);
                 return $url;
             }
         }

@@ -16,7 +16,7 @@
             $this->model('UserModel');
             $user = New userModel(); 
             $data = $user->myData();
-            return $this->view('userView',['employee'=>'11']);
+            return $this->view('userView',['employee'=>'1']);
         }
 
         public function userMethod($firstName, $lastName) {

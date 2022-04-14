@@ -7,14 +7,20 @@
     <title>User View</title>
 </head>
 <body>
+<form action="<?php echo URLROOT; ?>/userController/signup" method="POST">
+
+<input type="text" name="fullname" placeholder="enter name"><br>
+<input type="email" name="email" placeholder="enter email" ><br>
+<input type="password" name="pass" placeholder="enter password"><br>
+<input type="submit" value="Register">
 
 
-<?php 
+</form>
 
-print_r($employee);
-?>
-    <h2>User View</h2>
-    <p>user view is call from view folder</p>
 
+
+
+
+  
 </body>
 </html>

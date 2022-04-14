@@ -3,9 +3,9 @@
     class Framework {
 
         // for access file inside of view folder 
-        public function view($viewName,$data) {
+        public function view($viewName,$data) {    // call to userview in view folder viewname variable
             if(file_exists("../application/view/" .$viewName. ".php")) {  //file found ?
-                extract($data);
+                //extract($data);
 
                 include_once "../application/view/$viewName.php";
             } else {
